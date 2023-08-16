@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Employee Prediction</h1>
+    <form method="POST" action="/predict">
+        <label for="age">Age:</label>
+        <input type="text" name="age" required><br><br>
+
+        <label for="past_employee">Past Employee (Yes/No):</label>
+        <input type="text" name="past_employee" required><br><br>
+
+        <label for="business_travel">Business Travel:</label>
+        <input type="text" name="business_travel" required><br><br>
+
+        <label for="department">Department:</label>
+        <input type="text" name="department" required><br><br>
+
+        <label for="distance_from_home">Distance from Home:</label>
+        <input type="text" name="distance_from_home" required><br><br>
+
+        <label for="education_field">Education Field:</label>
+        <input type="text" name="education_field" required><br><br>
+
+        <label for="environment_satisfaction">Environment Satisfaction:</label>
+        <input type="text" name="environment_satisfaction" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="text" name="gender" required><br><br>
+
+        <label for="job_role">Job Role:</label>
+        <input type="text" name="job_role" required><br><br>
+
+        <label for="marital_status">Marital Status:</label>
+        <input type="text" name="marital_status" required><br><br>
+
+        <label for="monthly_income">Monthly Income:</label>
+        <input type="text" name="monthly_income" required><br><br>
+
+        <label for="num_companies_worked">Num Companies Worked:</label>
+        <input type="text" name="num_companies_worked" required><br><br>
+
+        <label for="over_time">Over Time (Yes/No):</label>
+        <input type="text" name="over_time" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction is defined %}
+    <p>Prediction: {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
